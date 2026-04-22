@@ -48,8 +48,8 @@ export const Login = () => {
     <div className="min-h-screen bg-premium-bg flex flex-col md:flex-row relative overflow-hidden transition-colors duration-500">
       {/* Background */}
       <div className="absolute inset-0 z-0 transition-opacity duration-700">
-        <img src="/hero_desk.png" className="w-full h-full object-cover opacity-[0.12] dark:opacity-15 grayscale mix-blend-multiply dark:mix-blend-normal" alt="Background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-premium-bg/95 via-premium-bg/85 to-premium-bg/70 transition-colors duration-500" />
+        <img src="/hero_desk.png" className="w-full h-full object-cover opacity-[0.22] dark:opacity-15 grayscale mix-blend-multiply dark:mix-blend-normal" alt="Background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-premium-bg/90 via-premium-bg/75 to-premium-bg/60 transition-colors duration-500" />
       </div>
 
       {/* Top Bar */}
@@ -82,7 +82,7 @@ export const Login = () => {
             Secure{' '}
             <span className="font-serif italic text-premium-gold font-normal">Access</span>
           </h1>
-          <p className="text-premium-muted font-light text-base leading-relaxed">
+          <p className="text-premium-text/85 dark:text-premium-muted font-light text-base leading-relaxed">
             Welcome to the secure portal. Verify your credentials to initiate an encrypted session with institutional-grade protection.
           </p>
         </div>
@@ -115,10 +115,10 @@ export const Login = () => {
           <div className="space-y-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-premium-border dark:border-premium-border/50"></div>
+                <div className="w-full border-t border-premium-muted/30 dark:border-premium-border/50"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="px-4 bg-premium-bg text-[9px] uppercase tracking-[0.25em] text-premium-text/80 dark:text-premium-muted font-normal">Select Perspective</span>
+                <span className="px-4 bg-premium-bg text-[9px] uppercase tracking-[0.25em] text-premium-text dark:text-premium-muted font-medium">Select Perspective</span>
               </div>
             </div>
 
@@ -131,7 +131,7 @@ export const Login = () => {
                     onClick={() => handleMockLogin(persona.email)}
                     disabled={isLoading}
                     type="button"
-                    className="flex flex-col items-center justify-center p-5 bg-premium-card/40 border border-premium-border dark:border-premium-border/50 rounded-sm hover:border-premium-gold/40 hover:bg-premium-card transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex flex-col items-center justify-center p-5 bg-premium-card/40 border border-premium-muted/25 dark:border-premium-border/50 rounded-sm hover:border-premium-gold/40 hover:bg-premium-card transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Icon size={20} strokeWidth={1.5} className="mb-3 text-premium-muted group-hover:text-premium-gold transition-colors" />
                     <span className="text-[10px] font-display tracking-[0.2em] text-premium-text group-hover:text-premium-gold transition-colors uppercase">{persona.label}</span>
@@ -142,17 +142,17 @@ export const Login = () => {
 
             <div className="relative pt-4">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-premium-border dark:border-premium-border/50"></div>
+                <div className="w-full border-t border-premium-muted/30 dark:border-premium-border/50"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="px-4 bg-premium-bg text-[9px] uppercase tracking-[0.25em] text-premium-text/80 dark:text-premium-muted font-normal">Or Manual Entry</span>
+                <span className="px-4 bg-premium-bg text-[9px] uppercase tracking-[0.25em] text-premium-text dark:text-premium-muted font-medium">Or Manual Entry</span>
               </div>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-7">
             <div className="space-y-1.5">
-              <label className="text-[10px] uppercase tracking-[0.15em] text-premium-text/80 dark:text-premium-muted font-normal">Principal Email</label>
+              <label className="text-[10px] uppercase tracking-[0.15em] text-premium-text dark:text-premium-muted font-medium">Principal Email</label>
               <input
                 type="email"
                 value={email}
@@ -164,7 +164,7 @@ export const Login = () => {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-[10px] uppercase tracking-[0.15em] text-premium-text/80 dark:text-premium-muted font-normal">Access Password</label>
+              <label className="text-[10px] uppercase tracking-[0.15em] text-premium-text dark:text-premium-muted font-medium">Access Password</label>
               <input
                 type="password"
                 value={password}
@@ -194,7 +194,7 @@ export const Login = () => {
             </button>
           </form>
 
-          <div className="pt-8 border-t border-premium-border dark:border-premium-border/50">
+          <div className="pt-8 border-t border-premium-muted/30 dark:border-premium-border/50">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[9px] uppercase tracking-[0.12em] text-premium-muted/60 font-normal">
               <span className="flex items-center gap-1.5"><Shield size={10} className="text-premium-gold/40" /> 2FA Mandatory</span>
               <span className="flex items-center gap-1.5"><Lock size={10} className="text-premium-gold/40" /> AES-256</span>
