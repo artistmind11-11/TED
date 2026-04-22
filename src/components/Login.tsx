@@ -48,15 +48,15 @@ export const Login = () => {
     <div className="min-h-screen bg-premium-bg flex flex-col md:flex-row relative overflow-hidden transition-colors duration-500">
       {/* Background */}
       <div className="absolute inset-0 z-0 transition-opacity duration-700">
-        <img src="/hero_desk.png" className="w-full h-full object-cover opacity-50 dark:opacity-15 grayscale" alt="Background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-premium-bg/80 via-premium-bg/60 to-premium-bg/30 dark:from-premium-bg/95 dark:via-premium-bg/85 dark:to-premium-bg/70 transition-colors duration-500" />
+        <img src="/hero_desk.png" className="w-full h-full object-cover opacity-30 dark:opacity-15 grayscale" alt="Background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-premium-bg/80 via-premium-bg/60 to-premium-bg/40 dark:from-premium-bg/95 dark:via-premium-bg/85 dark:to-premium-bg/70 transition-colors duration-500" />
       </div>
 
       {/* Top Bar */}
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-6 md:px-12">
-        <Link to="/" className="flex items-center gap-2 text-premium-text/80 dark:text-premium-muted hover:text-premium-text transition-colors group">
+        <Link to="/" className="flex items-center gap-2 text-premium-text/60 dark:text-premium-muted hover:text-premium-text transition-colors group">
           <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-          <span className="text-[10px] uppercase tracking-[0.15em] font-semibold dark:font-normal">Back to Website</span>
+          <span className="text-[10px] uppercase tracking-[0.15em] font-normal">Back to Website</span>
         </Link>
         <button
           onClick={toggleTheme}
@@ -82,12 +82,12 @@ export const Login = () => {
             Secure{' '}
             <span className="font-serif italic text-premium-gold font-normal">Access</span>
           </h1>
-          <p className="text-premium-muted font-light text-base leading-relaxed">
+          <p className="text-premium-text/70 dark:text-premium-muted font-light text-base leading-relaxed">
             Welcome to the secure portal. Verify your credentials to initiate an encrypted session with institutional-grade protection.
           </p>
         </div>
 
-        <div className="text-[10px] uppercase tracking-[0.3em] text-premium-muted/60 font-light">
+        <div className="text-[10px] uppercase tracking-[0.3em] text-premium-text/50 dark:text-premium-muted/60 font-light">
           © {new Date().getFullYear()} TED · AES-256 Encrypted
         </div>
       </div>
@@ -115,10 +115,10 @@ export const Login = () => {
           <div className="space-y-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-premium-text/40 dark:border-premium-border/50"></div>
+                <div className="w-full border-t border-premium-text/20 dark:border-premium-border/50"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="px-4 bg-premium-bg text-[9px] uppercase tracking-[0.25em] text-premium-text dark:text-premium-muted font-bold dark:font-normal">Select Perspective</span>
+                <span className="px-4 bg-premium-bg text-[9px] uppercase tracking-[0.25em] text-premium-text dark:text-premium-muted font-medium dark:font-normal">Select Perspective</span>
               </div>
             </div>
 
@@ -131,10 +131,10 @@ export const Login = () => {
                     onClick={() => handleMockLogin(persona.email)}
                     disabled={isLoading}
                     type="button"
-                    className="flex flex-col items-center justify-center p-5 bg-premium-card/40 border border-premium-text/40 dark:border-premium-border/50 rounded-sm hover:border-premium-gold/40 hover:bg-premium-card transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex flex-col items-center justify-center p-5 bg-premium-card/60 dark:bg-premium-card/40 border border-premium-text/15 dark:border-premium-border/50 rounded-sm hover:border-premium-gold/40 hover:bg-premium-card transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Icon size={20} strokeWidth={1.5} className="mb-3 text-premium-text/90 dark:text-premium-muted group-hover:text-premium-gold transition-colors" />
-                    <span className="text-[10px] font-display tracking-[0.2em] text-premium-text group-hover:text-premium-gold transition-colors uppercase font-bold dark:font-normal">{persona.label}</span>
+                    <Icon size={20} strokeWidth={1.5} className="mb-3 text-premium-text/60 dark:text-premium-muted group-hover:text-premium-gold transition-colors" />
+                    <span className="text-[10px] font-display tracking-[0.2em] text-premium-text font-medium dark:font-normal group-hover:text-premium-gold transition-colors uppercase">{persona.label}</span>
                   </button>
                 );
               })}
@@ -142,34 +142,34 @@ export const Login = () => {
 
             <div className="relative pt-4">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-premium-text/40 dark:border-premium-border/50"></div>
+                <div className="w-full border-t border-premium-text/20 dark:border-premium-border/50"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="px-4 bg-premium-bg text-[9px] uppercase tracking-[0.25em] text-premium-text dark:text-premium-muted font-bold dark:font-normal">Or Manual Entry</span>
+                <span className="px-4 bg-premium-bg text-[9px] uppercase tracking-[0.25em] text-premium-text dark:text-premium-muted font-medium dark:font-normal">Or Manual Entry</span>
               </div>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-7">
             <div className="space-y-1.5">
-              <label className="text-[10px] uppercase tracking-[0.15em] text-premium-text dark:text-premium-muted font-bold dark:font-normal">Principal Email</label>
+              <label className="text-[10px] uppercase tracking-[0.15em] text-premium-text dark:text-premium-muted font-medium dark:font-normal">Principal Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-transparent border-b border-premium-text/60 dark:border-premium-border py-3 text-premium-text focus:border-premium-gold outline-none transition-all duration-300 font-medium dark:font-light"
+                className="w-full bg-transparent border-b-2 border-premium-text/25 dark:border-b dark:border-premium-border py-3 text-premium-text focus:border-premium-gold outline-none transition-all duration-300 font-light"
                 required
                 autoComplete="email"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-[10px] uppercase tracking-[0.15em] text-premium-text dark:text-premium-muted font-bold dark:font-normal">Access Password</label>
+              <label className="text-[10px] uppercase tracking-[0.15em] text-premium-text dark:text-premium-muted font-medium dark:font-normal">Access Password</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-transparent border-b border-premium-text/60 dark:border-premium-border py-3 text-premium-text focus:border-premium-gold outline-none transition-all duration-300 font-medium dark:font-light"
+                className="w-full bg-transparent border-b-2 border-premium-text/25 dark:border-b dark:border-premium-border py-3 text-premium-text focus:border-premium-gold outline-none transition-all duration-300 font-light"
                 required
                 autoComplete="current-password"
               />
@@ -194,8 +194,8 @@ export const Login = () => {
             </button>
           </form>
 
-          <div className="pt-8 border-t border-premium-text/40 dark:border-premium-border/50">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[9px] uppercase tracking-[0.12em] text-premium-muted/60 font-normal">
+          <div className="pt-8 border-t border-premium-text/15 dark:border-premium-border/50">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[9px] uppercase tracking-[0.12em] text-premium-text/50 dark:text-premium-muted/60 font-normal">
               <span className="flex items-center gap-1.5"><Shield size={10} className="text-premium-gold/40" /> 2FA Mandatory</span>
               <span className="flex items-center gap-1.5"><Lock size={10} className="text-premium-gold/40" /> AES-256</span>
               <span className="flex items-center gap-1.5">
